@@ -1,3 +1,9 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
 :root {
   --primary: #5e5def;
   --section-spacing: 50px;
@@ -5,8 +11,16 @@
   --minor-spacing: 10px;
 }
 
-h1 {
+h1,
+h2,
+h3,
+p,
+a,
+li {
   font-family: "Inter", Helvetica, sans-serif;
+}
+
+h1 {
   font-weight: 800;
   font-size: 56px;
   margin: 0;
@@ -36,7 +50,7 @@ a.button {
   color: #fff;
   font-size: 16px;
   padding: 12px 20px;
-  border-radius: 999px;
+  border-radius: 8px;
   cursor: pointer;
   box-shadow: rgb(110, 121, 214) 0px 10px 20px -10px;
 
@@ -44,6 +58,12 @@ a.button {
 }
 a.button:hover {
   transform: translate(-3px, -3px);
+}
+
+a.button.secondary {
+  background-color: #fff;
+  color: var(--primary);
+  border: 1px solid var(--primary);
 }
 
 .logo {
@@ -85,4 +105,113 @@ a.button:hover {
 .hero .screenshot {
   max-width: 650px;
   width: 100%;
+}
+
+.pricing {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(var(--section-spacing) * 2);
+  padding: calc(var(--section-spacing) * 2) 0;
+
+  /* background-color: #5e5def0f; */
+}
+
+.pricing .tier {
+  background-color: #fff;
+  box-shadow: 3px 3px 8px #ececec;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 24px;
+  width: 260px;
+  margin: 0 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing .tier.black {
+  border-top: 10px solid #555;
+}
+
+.pricing .tier.yellow {
+  border-top: 10px solid #ffcb4b;
+}
+
+.pricing .tier.red {
+  border-top: 10px solid #ef5a5c;
+}
+
+.pricing .tier:first-child {
+  margin-left: 0;
+}
+
+.pricing .tier:last-child {
+  margin-right: 0;
+}
+
+.pricing .tier ul {
+  margin: 0;
+  padding: 0;
+  margin-top: calc(var(--minor-spacing) * 2);
+  margin-bottom: calc(var(--minor-spacing) * 4);
+  list-style: none;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.pricing .tier ul li {
+  display: grid;
+  grid-template-columns: 0 1fr;
+  gap: 1.75em;
+  align-items: start;
+  font-size: 16px;
+  margin-left: 0px;
+  font-size: 14px;
+}
+
+.pricing .tier ul li::before {
+  content: "x";
+  color: transparent;
+  background: url(./public/check-icon.svg) center center no-repeat;
+  vertical-align: middle;
+  background-size: 16px auto;
+  padding-top: 4px;
+  padding-left: 18px;
+}
+
+.pricing .tier .price {
+  font-weight: bold;
+  font-size: 32px;
+  margin: calc(var(--minor-spacing) * 2) 0 0 0;
+}
+
+.pricing .tier .price small {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.pricing .tier h2 {
+  font-weight: 600;
+  margin: 0;
+}
+
+.pricing .tier h3 {
+  font-weight: 100;
+  font-size: 14px;
+  margin: var(--minor-spacing) 0 0 0;
+}
+
+.pricing .tier .button-wrapper {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.pricing .tier .features h3 {
+  margin-top: calc(var(--minor-spacing) * 2);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 13px;
+  color: #6565659e;
 }
